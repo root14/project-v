@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo
+    container_name: video_mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/user_data
+    networks:
+      - shared-net
+networks:
+  shared-net:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+  elasticsearch_data:
