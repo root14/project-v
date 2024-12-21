@@ -17,22 +17,10 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    @PostMapping("/save")
-    public boolean saveUser(@RequestBody UserRegisterDto userRegisterDto) {
 
-        User user = User.builder()
-                .username(userRegisterDto.getUsername())
-                .password(userRegisterDto.getPassword())
-                .build();
-
-        userRepository.save(user);
-        return true;
-    }
-
-    @GetMapping("/getUser")
-    public User getUserByUsername(@RequestParam String username) {
-
-        return userRepository.findByUsername(username);
+    @GetMapping("/health")
+    public String health() {
+        return "OK";
     }
 
 }
