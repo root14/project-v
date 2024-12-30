@@ -6,6 +6,7 @@ import com.root14.projectv.repository.PhotoRepository;
 import org.bson.BsonBinarySubType;
 import org.bson.types.Binary;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -32,8 +33,7 @@ public class ParkService {
                 .authorId(addParkDto.getUserId())
                 .photo(new Binary(BsonBinarySubType.BINARY, addParkDto.getImage().getBytes()))
                 .content(addParkDto.getContent())
-                .latitude(addParkDto.getLatitude())
-                .longitude(addParkDto.getLongitude())
+                .location(new GeoJsonPoint(addParkDto.getLongitude(), addParkDto.getLatitude()))
                 .build();
         photoRepository.save(photo);
         return ResponseEntity.ok().body(photo.getId());

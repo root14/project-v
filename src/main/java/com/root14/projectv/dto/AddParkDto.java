@@ -10,6 +10,6 @@ public class AddParkDto {
     private String userId;
     private String content;
     private MultipartFile image;
-    private String longitude;
-    private String latitude;
+    private Double longitude;
+    private Double latitude;
 }
