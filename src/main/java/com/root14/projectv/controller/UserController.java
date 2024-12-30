@@ -1,8 +1,6 @@
 package com.root14.projectv.controller;
 
-import com.root14.projectv.Repository.UserRepository;
-import com.root14.projectv.dto.UserRegisterDto;
-import com.root14.projectv.entity.User;
+import com.root14.projectv.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,10 +15,5 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-
-    @GetMapping("/health")
-    public String health() {
-        return "OK";
-    }
-
+    //user stuff
 }

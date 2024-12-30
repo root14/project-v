@@ -1,6 +1,6 @@
 package com.root14.projectv.service;
 
-import com.root14.projectv.Repository.UserRepository;
+import com.root14.projectv.repository.UserRepository;
 import com.root14.projectv.dto.LoginUserDto;
 import com.root14.projectv.dto.UserRegisterDto;
 import com.root14.projectv.entity.User;

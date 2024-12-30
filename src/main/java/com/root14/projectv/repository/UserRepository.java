@@ -1,4 +1,4 @@
-package com.root14.projectv.Repository;
+package com.root14.projectv.repository;
 
 import com.root14.projectv.entity.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
