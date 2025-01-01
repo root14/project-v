@@ -4,6 +4,7 @@ import com.root14.projectv.dto.NearDto;
 import com.root14.projectv.model.Photo;
 import com.root14.projectv.repository.PhotoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.geo.*;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +23,8 @@ public class LocationService {
     public GeoResults<Photo> getNearPhoto(NearDto nearDto) {
         Point location = new Point(nearDto.getLongitude(), nearDto.getLatitude());
         Distance distance = new Distance(nearDto.getRadius(), Metrics.KILOMETERS);
-        return photoRepository.findByPhotoNear(location, distance);
+        PageRequest pageRequest=PageRequest.of(1,5);
+        return photoRepository.findByPhotoNear(location, distance, pageRequest);
     }
 
 }

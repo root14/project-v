@@ -1,6 +1,7 @@
 package com.root14.projectv.repository;
 
 import com.root14.projectv.model.Photo;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.geo.Distance;
 import org.springframework.data.geo.GeoResults;
 import org.springframework.data.geo.Point;
@@ -16,5 +17,5 @@ public interface PhotoRepository extends MongoRepository<Photo, String> {
 
     Optional<List<Photo>> findPhotoByAuthorId(String authorId);
 
-    GeoResults<Photo> findByPhotoNear(Point point, Distance distance);
+    GeoResults<Photo> findByPhotoNear(Point point, Distance distance, PageRequest pageRequest);
 }

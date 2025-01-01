@@ -9,4 +9,5 @@ public class NearDto {
     private double latitude;
     private double longitude;
     private double radius;
+    private int count;
 }
